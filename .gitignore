@@ -1,34 +1,18 @@
-# Este é um jogo de adivinhação
 import random
 
-guessesTaken = 0
+numero = random.randint(1,10)
 
-print('Olá! Qual é o seu Nome?')
-myName = input()
 
-number = random.randint(1, 20)
-print('Bom, ' + myName + ', Estou pensando em um número entre 1 a 20, você pode adivinhar? Tens apenas 6 tentativas.')
+print("Olá, qual seu nome?:")
+nome = input()
 
-while guessesTaken < 6:
-    print('Tente adivinhar.') # There are four spaces in front of print.
-    guess = input()
-    guess = int(guess)
+print("Legal, "+ nome +"! Estou pensando em um número entre 1 e 10, tente adivinhar qual é!!")
+adivinhar = input()
+adivinhar = int(adivinhar)
 
-    guessesTaken = guessesTaken + 1
+if adivinhar == numero:
+    print("Acertou.")
 
-    if guess < number:
-        print('Está abaixo do número.') # There are eight spaces in front of print.
-
-    if guess > number:
-        print('Está acima do número.')
-
-    if guess == number:
-        break
-
-if guess == number:
-    guessesTaken = str(guessesTaken)
-    print('Muito bem, ' + myName + '! Adivinhou meu número em ' + guessesTaken + ' tentativas!')
-
-if guess != number:
-    number = str(number)
-    print('Não. o número que eu estava pensando era: ' + number)
+elif adivinhar != numero:
+    numero = str(numero)
+    print("Errou, o número que eu estava pensando era: "+ numero)
